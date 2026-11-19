@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="theme-color" content="#f9fafc">
+  <meta name="description" content="Cách xác định dữ liệu cần lấy, kiểm tra chất lượng và so sánh tỷ lệ giao trễ giữa các nhóm đơn.">
+  <title>Chọn nguồn và phân tích dữ liệu giao hàng · Data &amp; Business</title>
+  <link rel="stylesheet" href="../styles.css?v=2">
+</head>
+<body>
+<div class="progress"></div>
+<header class="mast"><div class="nav"><a class="brand" href="../index.html"><strong>Data & Business</strong><small>Insights from real-world data work</small></a><nav class="navlinks"><a href="../index.html" class="">Trang chủ</a><a href="../posts.html" class="active">Bài viết</a><a href="../about.html" class="">Giới thiệu</a></nav><div class="nav-actions"><button class="iconbtn" data-theme aria-label="Đổi chế độ sáng/tối">◐</button></div></div></header>
+<main>
+  <div class="wrap">
+    <section class="article-intro">
+      <div class="crumbs">
+        <a href="../index.html">Trang chủ</a><span>›</span>
+        <a href="../posts.html">Bài viết</a><span>›</span>Business Data Analytics
+      </div>
+      <h1>Chọn nguồn và phân tích dữ liệu giao hàng</h1>
+      <p class="dek">Cách xác định dữ liệu cần lấy, kiểm tra chất lượng và so sánh tỷ lệ giao trễ giữa các nhóm đơn.</p>
+      <div class="meta"><span>Bài 2/3 · Business Data Analytics</span><span>Khoảng 4 phút đọc</span></div>
+      <img class="article-cover" src="../assets/data-factory-sketch.webp" alt="Minh họa luồng dữ liệu từ hệ thống nguồn đến báo cáo">
+    </section>
+  </div>
+  <div class="reading-layout">
+    <article class="article">
+<h2 id="nguon-du-lieu">Xác định dữ liệu cần lấy và nguồn chịu trách nhiệm</h2>
+<p>Để đo giao trễ, nhóm cần thời điểm đặt đơn, ngày cam kết ban đầu, kho xử lý, nhóm dịch vụ, trạng thái hủy và sự kiện giao thực tế. Hệ thống đặt hàng có thể lưu ngày cam kết, kho ghi thời điểm bàn giao, còn đơn vị vận chuyển cung cấp các lần cập nhật trạng thái. Với mỗi trường, ghi lại nguồn, ý nghĩa, múi giờ và độ trễ cập nhật.</p>
+<p>Chốt trước ai được xem dữ liệu và cần giữ bản trích xuất bao lâu. Địa chỉ chi tiết và số điện thoại của khách không cần thiết nếu báo cáo chỉ so theo kho và nhóm dịch vụ. Nếu cần kiểm tra đơn chia nhiều kiện, thống nhất thời điểm giao cả đơn dựa trên thời điểm giao kiện cuối cùng, theo định nghĩa dịch vụ đã chọn.</p>
+<h2 id="chat-luong">Kiểm tra dữ liệu ở cấp đơn hàng</h2>
+<p>Một đơn có thể có nhiều kiện, mỗi kiện lại có nhiều sự kiện. Nếu nối thẳng bảng đơn với nhật ký vận chuyển, một đơn có nhiều sự kiện sẽ chiếm nhiều dòng trong phép tính. Hãy tổng hợp sự kiện về đúng cấp đơn, sau đó đối chiếu số mã đơn duy nhất trước và sau khi nối.</p>
+<p>Kiểm tra các đơn thiếu ngày cam kết, sự kiện trùng, thời điểm giao trước lúc đặt và các kho có dữ liệu đến chậm. Khi nhà vận chuyển chưa gửi trạng thái cuối, đối chiếu với hệ thống vận hành trước khi kết luận đơn chưa giao. Lưu số bản ghi bị loại và lý do để người đọc hiểu mẫu số của tỷ lệ.</p>
+<h2 id="phan-tich">Khám phá chênh lệch trước khi giải thích</h2>
+<p>Trong một bộ số giả định gồm 1.200 đơn đủ điều kiện, nhóm sau giờ chốt có 120 đơn trễ trên 600 đơn, tức 20%. Nhóm trước giờ chốt có 60 trên 600 đơn, tức 10%. Chênh lệch quan sát là 10 điểm phần trăm. Một biểu đồ theo ngày giúp xem khoảng cách này kéo dài hay chỉ tập trung ở vài đợt cao điểm.</p>
+<p>Bước tiếp theo là tái lập phép so trong từng kho và nhóm dịch vụ. Kiểm tra thêm tồn kho hoặc ngày khuyến mãi nếu có dữ liệu phù hợp. Tỷ lệ có thể chênh lệch vì nhóm sau giờ chốt có nhiều đơn khó xử lý hơn. Nếu phân tích chưa phân biệt được các giả thuyết có ý nghĩa với quyết định, nhóm có thể thu thêm thời điểm bàn giao hoặc điều chỉnh câu hỏi.</p>
+      <div class="article-end">
+        <p>Đọc thêm Mục 2.2–2.3 của tài liệu <a href="https://www.iiba.org/globalassets/standards-and-resources/business-data-analytics/files/introduction-to-bda-practitioner-2.pdf#page=14"><cite>Introduction to Business Data Analytics: A Practitioner View</cite></a> (IIBA và Agile Alliance, 2019).</p>
+        <p><a href="bda-bao-cao-va-ra-quyet-dinh.html">Bài tiếp theo · Từ báo cáo phân tích đến quyết định vận hành →</a></p>
+        <a href="../posts.html">← Xem toàn bộ loạt bài</a>
+      </div>
+    </article>
+    <aside class="toc-box" aria-label="Mục lục">
+      <h3>Nội dung bài viết</h3>
+<a href="#nguon-du-lieu">Xác định dữ liệu cần lấy và nguồn chịu trách nhiệm</a>
+<a href="#chat-luong">Kiểm tra dữ liệu ở cấp đơn hàng</a>
+<a href="#phan-tich">Khám phá chênh lệch trước khi giải thích</a>
+    </aside>
+  </div>
+</main>
+<footer><div class="wrap footer-inner"><span>© Data &amp; Business · Independent writing on BI and analytics</span><a href="../index.html">Về trang chủ ↑</a></div></footer>
+<script src="../script.js" defer></script>
+</body>
+</html>
